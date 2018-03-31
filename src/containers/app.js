@@ -16,10 +16,10 @@ class App extends Component {
           <Navbar />
           <Switch>
             <Route path="/" exact component={Home} />
+            <Route path="/players" component={Players} />
             <ErrorBoundarie>
-              <Route path="/players" component={Players} />
+              <Route path="/teams" component={Teams} />
             </ErrorBoundarie>
-            <Route path="/teams" component={Teams} />
             <Route render={() => <p>Page not found</p>} />
           </Switch>
         </div>
