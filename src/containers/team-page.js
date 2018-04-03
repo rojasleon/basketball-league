@@ -5,6 +5,8 @@ import TeamLogo from '../components/team-logo'
 import Team from './team'
 import slug from 'slug'
 
+import Loading from '../components/loading'
+
 export default class TeamPage extends Component {
   state = {
     loading: true,
@@ -36,7 +38,7 @@ export default class TeamPage extends Component {
       <div>
         <Team id={teamId}>
           {(team) => team === null
-            ? <h1>Loading...</h1>
+            ? <Loading />
             : <div className="panel">
                 <TeamLogo id={teamId} />
                 <h1 className="medium-header">{team.name}</h1>
