@@ -4,10 +4,10 @@ import Home from './home'
 import Players from './players'
 import Teams from './teams'
 import TeamPage from './team-page'
+import Articles from './articles'
 
 import Navbar from '../components/navbar'
-
-import ErrorBoundarie from './error-boundarie'
+//import ErrorBoundarie from './error-boundarie'
 
 class App extends Component {
   render() {
@@ -19,7 +19,8 @@ class App extends Component {
             <Route path="/" exact component={Home} />
             <Route path="/players" component={Players} />
             <Route path="/teams" component={Teams} />
-            <Route path="/:teamId" component={TeamPage} />
+            <Route path="/:teamId" exact component={TeamPage} />
+            <Route path="/:teamId/articles" component={Articles} />
             <Route render={() => <p>Page not found</p>} />
           </Switch>
         </div>
