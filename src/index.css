@@ -74,6 +74,7 @@ a {
 
 .two-column {
   display: flex;
+  flex-direction: column;
 }
 
 .panel {
