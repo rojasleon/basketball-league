@@ -1,13 +1,58 @@
 import React, { Component } from 'react'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
-import Home from './home'
-import Players from './players'
-import Teams from './teams'
-import TeamPage from './team-page'
-import Articles from './articles'
+
+import Loading from '../components/loading'
+import DynamicImport from './dynamic-import'
 
 import Navbar from '../components/navbar'
+
+
 //import ErrorBoundarie from './error-boundarie'
+
+const Home = (props) => (
+  <DynamicImport load={() => import('./home')}>
+    {(Component) => Component === null
+      ? <Loading />
+      : <Component {...props} />
+    }
+  </DynamicImport>
+)
+
+const Players = (props) => (
+  <DynamicImport load={() => import('./players')}>
+    {(Component) => Component === null
+      ? <Loading />
+      : <Component {...props} />
+    }
+  </DynamicImport>
+)
+
+const Teams = (props) => (
+  <DynamicImport load={() => import('./teams')}>
+    {(Component) => Component === null
+      ? <Loading />
+      : <Component {...props} />
+    }
+  </DynamicImport>
+)
+
+const TeamPage = (props) => (
+  <DynamicImport load={() => import('./team-page')}>
+    {(Component) => Component === null
+      ? <Loading />
+      : <Component {...props} />
+    }
+  </DynamicImport>
+)
+
+const Articles = (props) => (
+  <DynamicImport load={() => import('./articles')}>
+    {(Component) => Component === null
+      ? <Loading />
+      : <Component {...props} />
+    }
+  </DynamicImport>
+)
 
 class App extends Component {
   render() {
