@@ -48,7 +48,7 @@ const TeamPage = (props) => (
 const Articles = (props) => (
   <DynamicImport load={() => import('./articles')}>
     {(Component) => Component === null
-      ? <Loading />
+      ? <Loading a />
       : <Component {...props} />
     }
   </DynamicImport>

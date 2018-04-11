@@ -19,6 +19,8 @@ export default class Loading extends Component {
         ? this.setState(() => ({ text: this.props.text }))
         : this.setState(({ text }) => ({ text: text + '.' }))
     }, 200)
+    console.log(this.props.a)
+    console.log(this.isMounted)
   }
 
   componentWillUnmount() {
